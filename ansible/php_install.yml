@@ -1,0 +1,5 @@
+- name: Install php5
+  hosts: local
+  sudo: yes
+  roles:
+      - php

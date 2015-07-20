@@ -1,0 +1,8 @@
+---
+# Handlers for mysqldb
+
+- name : stop mysql
+  service: name=mysql state=stopped
+  
+- name : start mariadb
+  service: name=mysql state=started

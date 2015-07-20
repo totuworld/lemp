@@ -1,0 +1,12 @@
+- name : remove Apache2
+  apt : name=apache2 state=absent
+  notify : stop Apache2
+
+- name : remove apache2-utils
+  apt : name=apache2-utils state=absent
+  
+- name : remove apache2.2-bin
+  apt : name=apache2-utils state=absent
+
+- name : remove apache2-common
+  apt : name=apache2-utils state=absent

@@ -1,0 +1,8 @@
+- name : install Nginx
+  apt : name=nginx state=present
+  notify : start nginx
+
+- file: path=/etc/nginx/sites-available state=directory
+
+- copy: src=/vagrant/ansible/templates/default dest=/etc/nginx/sites-available/default
+  notify: restart nginx

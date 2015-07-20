@@ -1,0 +1,7 @@
+- name: Install mariadb
+  hosts: local
+  vars:
+    mysql_root_password: 1234
+  sudo: yes
+  roles:
+      - mariadb

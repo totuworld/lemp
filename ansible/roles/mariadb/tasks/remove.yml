@@ -1,0 +1,11 @@
+# - name : stop mysql
+#  notify : stop mysql
+
+- name : remove mysql-server
+  apt : name=mysql-server state=absent
+  
+- name : remove mysql-client
+  apt : name=mysql-client state=absent
+
+- name : remove mysql-common
+  apt : name=mysql-common state=absent

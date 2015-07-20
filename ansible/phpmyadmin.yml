@@ -1,0 +1,5 @@
+- name: Install phpmyadmin
+  hosts: local
+  sudo: yes
+  roles:
+      - phpmyadmin

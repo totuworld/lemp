@@ -1,0 +1,5 @@
+- name: install phpmyadmin
+  apt: name=phpmyadmin state=latest
+
+- name : folder link
+  file: path=/usr/share/nginx/html/phpmyadmin src=/usr/share/phpmyadmin  owner=root group=root state=link force=yes

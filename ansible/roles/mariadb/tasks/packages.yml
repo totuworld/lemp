@@ -1,0 +1,21 @@
+- name : install mariadb
+  apt : name={{ item }} state=present
+  with_items:
+    - mariadb-server
+    - python-mysqldb
+  notify : start mariadb
+  
+- name: set the sql root password
+  mysql_user: user=root password={{ mysql_root_password }} host=localhost
+
+- name: config for easy access as root user
+  template: src=templates/my-cnf.j2 dest=/root/.my.cnf
+
+- name: secure the sql root user for ipv6 localhost (::1)
+  mysql_user: user="root" password="{{ mysql_root_password }}" host="::1"
+              
+- name: secure the sql root user for ipv4 localhost (127.0.0.1)
+  mysql_user: user="root" password="{{ mysql_root_password }}" host="127.0.0.1"
+              
+- name: secure the sql root user for localhost domain (localhost)
+  mysql_user: user="root" password="{{ mysql_root_password }}" host="localhost"
