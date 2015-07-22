@@ -1,0 +1,5 @@
+---
+
+phpmyadmin_control_user: 'phpmyadmin'
+phpmyadmin_control_password: '1234'
+phpmyadmin_control_database: 'phpmyadmin'
