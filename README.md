@@ -28,44 +28,47 @@ Install LEMP stack on Ubuntu 14.04(LTS)
 ```
 .
 ├── README.md
-├── startserver.bat
 ├── Vagrantfile
-└── ansible
-    ├── hosts
-    ├── install_lemp.sh
-    ├── lemp_install.yml
-    ├── mariadb_install.yml
-    ├── nginx_install.yml
-    ├── php_install.yml
-    ├── phpmyadmin.yml
-    ├── roles
-    │   ├── mariadb
-    │   │   ├── handlers
-    │   │   │   └── main.yml
-    │   │   └── tasks
-    │   │       ├── main.yml
-    │   │       ├── packages.yml
-    │   │       └── remove.yml
-    │   ├── nginx
-    │   │   ├── handlers
-    │   │   │   └── main.yml
-    │   │   └── tasks
-    │   │       ├── main.yml
-    │   │       ├── packages.yml
-    │   │       └── remove.yml
-    │   ├── php
-    │   │   ├── handlers
-    │   │   │   └── main.yml
-    │   │   └── tasks
-    │   │       └── main.yml
-    │   └── phpmyadmin
-    │       └── tasks
-    │           └── main.yml
-    └── templates
-        ├── default
-        ├── my-cnf.j2
-        ├── php.ini
-        └── www.conf
+├── ansible
+│   ├── hosts
+│   ├── install_lemp.sh
+│   ├── lemp_install.yml
+│   ├── mariadb_install.yml
+│   ├── nginx_install.yml
+│   ├── php_install.yml
+│   ├── phpmyadmin.yml
+│   ├── roles
+│   │   ├── mariadb
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   └── tasks
+│   │   │       ├── main.yml
+│   │   │       ├── packages.yml
+│   │   │       └── remove.yml
+│   │   ├── nginx
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   └── tasks
+│   │   │       ├── main.yml
+│   │   │       ├── packages.yml
+│   │   │       └── remove.yml
+│   │   ├── php
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   └── tasks
+│   │   │       └── main.yml
+│   │   └── phpmyadmin
+│   │       ├── tasks
+│   │       │   └── main.yml
+│   │       └── vars
+│   │           └── main.yml
+│   └── templates
+│       ├── default
+│       ├── my-cnf.j2
+│       ├── php.ini
+│       ├── phpmyadmin.conf.j2
+│       └── www.conf
+└── startserver.bat
 ``` 
 
 VM설치(Virtual Machine Setup)
