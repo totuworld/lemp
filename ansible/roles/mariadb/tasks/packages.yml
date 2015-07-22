@@ -11,6 +11,10 @@
 - name: config for easy access as root user
   template: src=templates/my-cnf.j2 dest=/root/.my.cnf
 
+- name: Modify configuration file to listen on all interfaces
+  lineinfile: dest=/etc/mysql/my.cnf regexp="^bind-address" line="bind-address=0.0.0.0"
+  notify : restart mariadb
+
 - name: secure the sql root user for ipv6 localhost (::1)
   mysql_user: user="root" password="{{ mysql_root_password }}" host="::1"
               
@@ -19,3 +23,6 @@
               
 - name: secure the sql root user for localhost domain (localhost)
   mysql_user: user="root" password="{{ mysql_root_password }}" host="localhost"
+
+- name: secure the sql root user for all
+  mysql_user: user="root" password="{{ mysql_root_password }}" host="%" priv=*.*:ALL,GRANT state=present

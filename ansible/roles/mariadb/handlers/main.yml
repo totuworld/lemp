@@ -6,3 +6,6 @@
   
 - name : start mariadb
   service: name=mysql state=started
+
+- name : restart mariadb
+  service: name=mysql state=restarted

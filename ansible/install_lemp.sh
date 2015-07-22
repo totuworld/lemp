@@ -13,8 +13,6 @@ if [ ! -f /usr/bin/ansible ]; then
   sudo apt-get -y update
   echo "Installing Ansible..."
   sudo apt-get -y install ansible
-  echo "Installing python-mysqldb..."
-  sudo apt-get -y install python-mysqldb
 fi
 
 echo "Running Ansible Playbooks"
