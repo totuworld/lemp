@@ -1,0 +1,5 @@
+- name: Install mongodb
+  hosts: local
+  sudo: yes
+  roles:
+      - mongodb

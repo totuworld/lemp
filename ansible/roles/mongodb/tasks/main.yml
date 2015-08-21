@@ -1,0 +1,12 @@
+---
+
+- name: Add APT key
+  apt_key: keyserver={{mongodb_apt_key_url}} id="{{mongodb_apt_key_id}}"
+
+- name: Add APT repository
+  apt_repository: repo="{{mongodb_repository}}" update_cache=yes
+
+- name: Install MongoDB package
+  apt: name={{item}} state=present
+  with_items:
+    - mongodb-org
