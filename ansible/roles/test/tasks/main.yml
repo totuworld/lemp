@@ -1,0 +1,5 @@
+- shell: echo "only on Red Hat 6, derivatives, and later"
+  when: ansible_os_family == "RedHat"
+  
+- shell: echo "Debian"
+  when: ansible_os_family == "Debian"

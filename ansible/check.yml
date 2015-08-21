@@ -1,0 +1,5 @@
+- name: test
+  hosts: local
+  sudo: yes
+  roles:
+      - test

@@ -1,0 +1,5 @@
+- name: Install redis
+  hosts: local
+  sudo: yes
+  roles:
+      - redis

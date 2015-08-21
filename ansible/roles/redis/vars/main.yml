@@ -1,0 +1,17 @@
+---
+## Installation options
+redis_version: 3.0.3
+redis_install_dir: /opt/redis
+redis_user: redis
+redis_dir: /var/lib/redis/{{ redis_port }}
+redis_tarball: false
+# The open file limit for Redis/Sentinel
+redis_nofile_limit: 16384
+# Configure Redis as a service
+# This creates the init scripts for Redis and ensures the process is running
+# Also applies for Redis Sentinel
+redis_as_service: true
+
+## Networking/connection options
+redis_bind: 0.0.0.0
+redis_port: 6379
