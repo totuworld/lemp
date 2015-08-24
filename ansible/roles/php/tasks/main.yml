@@ -9,10 +9,10 @@
 
 - file: path=/etc/php5/fpm/ state=directory
 
-- copy: src=/vagrant/ansible/templates/php.ini dest=/etc/php5/fpm/php.init
+- copy: src=templates/php.ini dest=/etc/php5/fpm/php.init
   notify: restart php5-fpm
   
 - file: path=/etc/php5/fpm/pool.d state=directory
 
-- copy: src=/vagrant/ansible/templates/www.conf dest=/etc/php5/fpm/pool.d/www.conf
+- copy: src=templates/www.conf dest=/etc/php5/fpm/pool.d/www.conf
   notify: restart php5-fpm

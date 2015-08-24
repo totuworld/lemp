@@ -4,5 +4,5 @@
 
 - file: path=/etc/nginx/sites-available state=directory
 
-- copy: src=/vagrant/ansible/templates/default dest=/etc/nginx/sites-available/default
+- copy: src=templates/defaultNginx dest=/etc/nginx/sites-available/default
   notify: restart nginx
