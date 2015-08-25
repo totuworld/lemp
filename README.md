@@ -31,8 +31,8 @@ Install LEMP stack on Ubuntu 14.04(LTS)
       - php
       - nginx
       - phpmyadmin
-	    - mongodb
-	    - mariadb
+      - mongodb
+      - mariadb
 ```
 
 VM설치(Virtual Machine Setup)
