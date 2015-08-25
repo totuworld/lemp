@@ -5,13 +5,18 @@ Install LEMP stack on Ubuntu 14.04(LTS)
 포함된 내용(What's included)
 ------
 
-아래 같은 사항이 포함됩니다.
+기본 포함 사항
 
 * Ubuntu 14.04 Trusty LTS
 * Nginx 
 * PHP 5.6 
 * [MariaDB](https://mariadb.org/)
 * PhpMyAdmin
+
+옵션 사항
+
+* Mongodb 3.0.6
+* Redis 3.0.3
 
 필요사항(Requirements)
 ------
