@@ -23,56 +23,36 @@ Install LEMP stack on Ubuntu 14.04(LTS)
 ------
 
 1. 레포지토리를 다운받거나 클론(복제)한다.
-2. 클론(복제)한 폴더로 이동하면 아래와 같은 폴더 구조를 확인할 수 있다.
+2. LEMP 외에 mongodb, redis가 필요하다면 `ansible/lemp_install.yml`파일의 roles: 부분에 추가한다.
 
 ```
-.
-├── README.md
-├── Vagrantfile
-├── ansible
-│   ├── hosts
-│   ├── install_lemp.sh
-│   ├── lemp_install.yml
-│   ├── mariadb_install.yml
-│   ├── nginx_install.yml
-│   ├── php_install.yml
-│   ├── phpmyadmin.yml
-│   ├── roles
-│   │   ├── mariadb
-│   │   │   ├── handlers
-│   │   │   │   └── main.yml
-│   │   │   └── tasks
-│   │   │       ├── main.yml
-│   │   │       ├── packages.yml
-│   │   │       └── remove.yml
-│   │   ├── nginx
-│   │   │   ├── handlers
-│   │   │   │   └── main.yml
-│   │   │   └── tasks
-│   │   │       ├── main.yml
-│   │   │       ├── packages.yml
-│   │   │       └── remove.yml
-│   │   ├── php
-│   │   │   ├── handlers
-│   │   │   │   └── main.yml
-│   │   │   └── tasks
-│   │   │       └── main.yml
-│   │   └── phpmyadmin
-│   │       ├── tasks
-│   │       │   └── main.yml
-│   │       └── vars
-│   │           └── main.yml
-│   └── templates
-│       ├── default
-│       ├── my-cnf.j2
-│       ├── php.ini
-│       ├── phpmyadmin.conf.j2
-│       └── www.conf
-└── startserver.bat
-``` 
+  roles:
+      - mariadb
+      - php
+      - nginx
+      - phpmyadmin
+	    - mongodb
+	    - mariadb
+```
 
 VM설치(Virtual Machine Setup)
 ------
 
 * OSX : 터미널에서 `vagrant up` 입력 
 * Windows : startserver.bat  파일 실행
+
+
+포트 포워딩 가이드(Port Forwarding Guides)
+------
+
+### localhost의 포트와 기본 연결된 포트
+
+호스트 포트 | 게스트 포트 | 연결된 서비스
+:---:|:---:|:---
+8080|80|http
+6306|3306|mariadb
+
+
+### mongodb, redis 추가 시 포트 개방 방법
+
+`Vagrantfile`의 port forwarding 부분을 찾아서 mongodb, redis 용 포트 포워딩의 주석을 제거 
