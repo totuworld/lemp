@@ -15,6 +15,18 @@ if [ ! -f /usr/bin/ansible ]; then
   sudo apt-get -y install ansible
 fi
 
+echo "Copy Playbooks"
+cd /vagrant
+cp -a ansible/ ~/ansible
+
+echo "change hosts chmod"
+cd ~/ansible
+chmod -x hosts
+
 echo "Running Ansible Playbooks"
-cd /vagrant/ansible
+cd ~/ansible
 echo -e "\n\n\n" | ansible-playbook -i hosts lemp_install.yml --sudo --user=vagrant --connection=local
+
+echo "remove Ansible Playbooks"
+cd ~
+rm -rf ./ansible
