@@ -10,3 +10,7 @@
   apt: name={{item}} state=present
   with_items:
     - mongodb-org
+
+- name: Configure mongodb
+  lineinfile: dest=/etc/mongod.conf regexp="^bind_ip" line="bind_ip=0.0.0.0"
+  notify: restart mongo
