@@ -9,8 +9,9 @@
 - name: Install MongoDB package
   apt: name={{item}} state=present
   with_items:
-    - mongodb-org
+    - mongodb-org=3.2.0
+    - mongodb-org-shell=3.2.0
 
 - name: Configure mongodb
-  lineinfile: dest=/etc/mongod.conf regexp="^bind_ip" line="bind_ip=0.0.0.0"
+  template: src=mongod.conf.j2 dest=/etc/mongod.conf
   notify: restart mongo
