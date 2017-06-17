@@ -8,7 +8,7 @@ fi
 # Install Ansible and its dependencies if not installed.
 if [ ! -f /usr/bin/ansible ]; then
   echo "Adding Ansible repository..."
-  sudo apt-add-repository ppa:ansible/ansible
+  sudo apt-add-repository ppa:ansible/ansible-1.9
   echo "Updating system..."
   sudo apt-get -y update
   echo "Installing Ansible..."
