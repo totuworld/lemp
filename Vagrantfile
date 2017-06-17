@@ -11,10 +11,10 @@ Vagrant.configure(2) do |config|
   # http
   config.vm.network "forwarded_port", guest: 80, host: 8080
   # maraidb
-  config.vm.network "forwarded_port", guest: 3306, host: 6306
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
   
   # redis
-  # config.vm.network "forwarded_port", guest: 6379, host: 6379
+  config.vm.network "forwarded_port", guest: 6379, host: 6379
   # mongodb
   # config.vm.network "forwarded_port", guest: 27017, host: 27017
 

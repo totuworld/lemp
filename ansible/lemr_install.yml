@@ -1,0 +1,10 @@
+- name: Install LEMP
+  hosts: local
+  vars:
+    mysql_root_password: 1234
+  sudo: yes
+  roles:
+      - mariadb
+      - php
+      - nginx
+      - redis
